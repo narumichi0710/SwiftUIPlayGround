@@ -22,3 +22,6 @@ struct CustomTabPager: View {
     }
 }
 ```
+
+## extension/TabPager
+https://github.com/narumichi0710/SwiftUIPlayGround/blob/main/SwiftUIPlayGround/View/Extension/TabPager.swift
