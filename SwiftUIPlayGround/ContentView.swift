@@ -1,6 +1,6 @@
 //
 //  ContentView.swift
-//  SwiftUIPlayGround
+//  swiftUIDesignPatterns
 //
 //  Created by Narumichi Kubo on 2023/04/27.
 //
@@ -9,13 +9,15 @@ import SwiftUI
 
 struct ContentView: View {
     var body: some View {
-        VStack {
-            Image(systemName: "globe")
-                .imageScale(.large)
-                .foregroundColor(.accentColor)
-            Text("Hello, world!")
+        NavigationView {
+            List {
+                NavigationLink(destination: UpdateControlRootView()) {
+                    Text("UI Update Control")
+                }
+            }
+            .navigationBarTitle("SwiftUI Design Patterns")
+            .navigationBarTitleDisplayMode(.inline)
         }
-        .padding()
     }
 }
 
