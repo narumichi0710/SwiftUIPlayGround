@@ -4,22 +4,35 @@
 
 import SwiftUI
 
-protocol UpdateTrigger: ObservableObject {
-    var trigger: Date { get set }
-    func update(file: String, func: String, line: Int)
-}
+struct UpdateControlRootView: View {
+    @StateObject var sampleDataA = SampleDataA()
+    @StateObject var sampleDataB = SampleDataB()
 
-class UpdateControlableObject: UpdateTrigger {
-    @Published var trigger: Date = .init()
-    /// Published属性を持つプロパティを更新し、Viewを再描画
-    func update(
-        file: String = #fileID,
-        func: String = #function,
-        line: Int = #line
-    ) {
-        objectWillChange.send()
-        trigger = .now
-        debugPrint("\(trigger) \(file).\(`func`) #\(line)")
+    
+    var body: some View {
+        VStack {
+            Spacer()
+            HStack {
+                VStack {
+                    Text("\(sampleDataA.count) times update")
+                    Text("by incrementByTrigger")
+                }
+                VStack {
+                    Text("\(sampleDataB.count)")
+                    Text("by incrementByWillChange")
+                }
+            }
+            Spacer()
+            HStack {
+                Button("IncrementByWillChange") {
+                    sampleDataA.incrementByTrigger()
+                }
+                Button("IncrementByTrigger") {
+                    sampleDataB.incrementByWillChange()
+                }
+            }
+            Spacer()
+        }
     }
 }
 
@@ -43,32 +56,6 @@ class SampleDataB: ObservableObject {
     }
 }
 
-struct UpdateControlRootView: View {
-    @StateObject var sampleDataA = SampleDataA()
-    @StateObject var sampleDataB = SampleDataB()
-
-    
-    var body: some View {
-        VStack {
-            Spacer()
-            HStack {
-                Text("\(sampleDataA.count)")
-                Text("\(sampleDataB.count)")
-            }
-            Spacer()
-            HStack {
-                Button("IncrementByWillChange") {
-                    sampleDataA.incrementByTrigger()
-                }
-                
-                Button("IncrementByTrigger") {
-                    sampleDataB.incrementByWillChange()
-                }
-            }
-            Spacer()
-        }
-    }
-}
 
 struct UpdateControlRootView_Previews: PreviewProvider {
     static var previews: some View {
