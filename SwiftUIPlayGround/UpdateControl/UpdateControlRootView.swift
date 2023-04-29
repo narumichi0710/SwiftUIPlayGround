@@ -14,23 +14,41 @@ struct UpdateControlRootView: View {
             Spacer()
             HStack {
                 VStack {
-                    Text("\(sampleDataA.count) times update")
+                    Text("\(sampleDataA.count) count")
+                    Text("\(sampleDataA.num) times update")
                     Text("by incrementByTrigger")
                 }
                 VStack {
-                    Text("\(sampleDataB.count)")
+                    Text("\(sampleDataB.count) count")
+                    Text("\(sampleDataB.num) times update")
                     Text("by incrementByWillChange")
                 }
             }
             Spacer()
             HStack {
-                Button("IncrementByWillChange") {
-                    sampleDataA.incrementByTrigger()
+                VStack {
+                    Button("Increment A") {
+                        sampleDataA.increment()
+                    }
+                    Button("Update by Trigger") {
+                        sampleDataA.updateByTrigger()
+                    }
                 }
-                Button("IncrementByTrigger") {
-                    sampleDataB.incrementByWillChange()
+                VStack {
+                    Button("Increment B") {
+                        sampleDataB.increment()
+                    }
+                    Button("Update by WillChange") {
+                        sampleDataB.updateByWillChange()
+                    }
                 }
             }
+            
+            Button("Reset") {
+                sampleDataA.reset()
+                sampleDataB.reset()
+            }
+
             Spacer()
         }
     }
@@ -38,20 +56,42 @@ struct UpdateControlRootView: View {
 
 class SampleDataA: UpdateControlableObject {
     private(set) var count = 0
+    private(set) var num = 0
+
+    func increment() {
+        count += 1
+    }
 
     // publishedで更新
-    func incrementByTrigger() {
-        count += 1
+    func updateByTrigger() {
+        num += 1
+        update()
+    }
+    
+    func reset() {
+        count = 0
+        num = 0
         update()
     }
 }
 
 class SampleDataB: ObservableObject {
     private(set) var count = 0
-
-    // objectWillChangeで更新
-    func incrementByWillChange() {
+    private(set) var num = 0
+    
+    func increment() {
         count += 1
+    }
+    
+    // objectWillChangeで更新
+    func updateByWillChange() {
+        num += 1
+        objectWillChange.send()
+    }
+    
+    func reset() {
+        count = 0
+        num = 0
         objectWillChange.send()
     }
 }
