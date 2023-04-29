@@ -12,10 +12,13 @@ struct ContentView: View {
         NavigationView {
             List {
                 NavigationLink(destination: UpdateControlRootView()) {
-                    Text("UI Update Control")
+                    Text("Update Control")
+                }
+                NavigationLink(destination: ModulerRootView()) {
+                    Text("Moduler Structure")
                 }
             }
-            .navigationBarTitle("SwiftUI Design Patterns")
+            .navigationBarTitle("SwiftUI Play Ground")
             .navigationBarTitleDisplayMode(.inline)
         }
     }

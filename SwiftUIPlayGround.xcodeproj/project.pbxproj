@@ -12,6 +12,9 @@
 		5224A7AC29FA6FAF00201B56 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 5224A7AB29FA6FAF00201B56 /* Assets.xcassets */; };
 		5224A7AF29FA6FAF00201B56 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 5224A7AE29FA6FAF00201B56 /* Preview Assets.xcassets */; };
 		5224A7B729FA703A00201B56 /* UpdateControlRootView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5224A7B629FA703A00201B56 /* UpdateControlRootView.swift */; };
+		52AE5E6A29FCE56B00B27D8D /* ModulerRootView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52AE5E6929FCE56B00B27D8D /* ModulerRootView.swift */; };
+		52AE5E6C29FCE58A00B27D8D /* ModulerRootData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52AE5E6B29FCE58A00B27D8D /* ModulerRootData.swift */; };
+		52AE5E6E29FCE65E00B27D8D /* UpdateTrigger.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52AE5E6D29FCE65E00B27D8D /* UpdateTrigger.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -21,6 +24,9 @@
 		5224A7AB29FA6FAF00201B56 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		5224A7AE29FA6FAF00201B56 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		5224A7B629FA703A00201B56 /* UpdateControlRootView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UpdateControlRootView.swift; sourceTree = "<group>"; };
+		52AE5E6929FCE56B00B27D8D /* ModulerRootView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ModulerRootView.swift; sourceTree = "<group>"; };
+		52AE5E6B29FCE58A00B27D8D /* ModulerRootData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ModulerRootData.swift; sourceTree = "<group>"; };
+		52AE5E6D29FCE65E00B27D8D /* UpdateTrigger.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UpdateTrigger.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -53,6 +59,7 @@
 		5224A7A629FA6FAE00201B56 /* SwiftUIPlayGround */ = {
 			isa = PBXGroup;
 			children = (
+				52AE5E6629FCE4E900B27D8D /* ModulerUI */,
 				5224A7B529FA700600201B56 /* UpdateControl */,
 				5224A7A729FA6FAE00201B56 /* SwiftUIPlayGroundApp.swift */,
 				5224A7A929FA6FAE00201B56 /* ContentView.swift */,
@@ -74,8 +81,18 @@
 			isa = PBXGroup;
 			children = (
 				5224A7B629FA703A00201B56 /* UpdateControlRootView.swift */,
+				52AE5E6D29FCE65E00B27D8D /* UpdateTrigger.swift */,
 			);
 			path = UpdateControl;
+			sourceTree = "<group>";
+		};
+		52AE5E6629FCE4E900B27D8D /* ModulerUI */ = {
+			isa = PBXGroup;
+			children = (
+				52AE5E6929FCE56B00B27D8D /* ModulerRootView.swift */,
+				52AE5E6B29FCE58A00B27D8D /* ModulerRootData.swift */,
+			);
+			path = ModulerUI;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -149,8 +166,11 @@
 			buildActionMask = 2147483647;
 			files = (
 				5224A7AA29FA6FAE00201B56 /* ContentView.swift in Sources */,
+				52AE5E6C29FCE58A00B27D8D /* ModulerRootData.swift in Sources */,
 				5224A7B729FA703A00201B56 /* UpdateControlRootView.swift in Sources */,
+				52AE5E6A29FCE56B00B27D8D /* ModulerRootView.swift in Sources */,
 				5224A7A829FA6FAE00201B56 /* SwiftUIPlayGroundApp.swift in Sources */,
+				52AE5E6E29FCE65E00B27D8D /* UpdateTrigger.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

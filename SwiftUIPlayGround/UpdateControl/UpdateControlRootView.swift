@@ -8,7 +8,7 @@ struct UpdateControlRootView: View {
     @StateObject var sampleDataA = SampleDataA()
     @StateObject var sampleDataB = SampleDataB()
 
-    
+
     var body: some View {
         VStack {
             Spacer()
