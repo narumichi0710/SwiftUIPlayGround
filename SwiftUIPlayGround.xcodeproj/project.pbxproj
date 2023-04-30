@@ -59,7 +59,8 @@
 		5224A7A629FA6FAE00201B56 /* SwiftUIPlayGround */ = {
 			isa = PBXGroup;
 			children = (
-				52AE5E6629FCE4E900B27D8D /* ModulerUI */,
+				52AE5E7129FE0B1500B27D8D /* NestedClasses */,
+				52AE5E6629FCE4E900B27D8D /* ModulerStructure */,
 				5224A7B529FA700600201B56 /* UpdateControl */,
 				5224A7A729FA6FAE00201B56 /* SwiftUIPlayGroundApp.swift */,
 				5224A7A929FA6FAE00201B56 /* ContentView.swift */,
@@ -86,13 +87,20 @@
 			path = UpdateControl;
 			sourceTree = "<group>";
 		};
-		52AE5E6629FCE4E900B27D8D /* ModulerUI */ = {
+		52AE5E6629FCE4E900B27D8D /* ModulerStructure */ = {
 			isa = PBXGroup;
 			children = (
 				52AE5E6929FCE56B00B27D8D /* ModulerRootView.swift */,
 				52AE5E6B29FCE58A00B27D8D /* ModulerRootData.swift */,
 			);
-			path = ModulerUI;
+			path = ModulerStructure;
+			sourceTree = "<group>";
+		};
+		52AE5E7129FE0B1500B27D8D /* NestedClasses */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = NestedClasses;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
